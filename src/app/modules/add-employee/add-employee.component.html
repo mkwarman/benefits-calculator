@@ -1,6 +1,7 @@
 <form
-    (ngSubmit)="onAdd()"
     #addEmployeeForm="ngForm"
+    [formGroup]="form"
+    (ngSubmit)="onAdd(addEmployeeForm)"
     >
     <div class="form-row">
         <div class="form-group col-md-6">
@@ -10,21 +11,17 @@
                 class="form-control"
                 id="employeeName"
                 placeholder="John Smith"
-                required
-                [(ngModel)]="employeeName"
-                name="employeeName"
+                formControlName="employeeName"
                 >
         </div>
         <div class="form-group col-md-4">
-            <label for="employeeNumDependents">Num of Dependents: </label>
+            <label for="numDependents">Num of Dependents: </label>
             <input
                 type="number"
                 class="form-control"
-                id="employeeNumDependents"
+                id="numDependents"
                 placeholder="0"
-                required
-                [(ngModel)]="numDependents"
-                name="employeeNumDependents"
+                formControlName="numDependents"
                 >
         </div>
         <div class="form-group col-md-2 align-self-end">
