@@ -1,0 +1,38 @@
+<form
+    (ngSubmit)="onAdd()"
+    #addEmployeeForm="ngForm"
+    >
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="employeeName">Employee Name: </label>
+            <input
+                type="text"
+                class="form-control"
+                id="employeeName"
+                placeholder="John Smith"
+                required
+                [(ngModel)]="employeeName"
+                name="employeeName"
+                >
+        </div>
+        <div class="form-group col-md-4">
+            <label for="employeeNumDependents">Num of Dependents: </label>
+            <input
+                type="number"
+                class="form-control"
+                id="employeeNumDependents"
+                placeholder="0"
+                required
+                [(ngModel)]="numDependents"
+                name="employeeNumDependents"
+                >
+        </div>
+        <div class="form-group col-md-2 align-self-end">
+            <button
+                type="submit"
+                class="btn btn-primary btn-block"
+                [disabled]="!addEmployeeForm.form.valid"
+                >Add</button>
+        </div>
+    </div>
+</form>

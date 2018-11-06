@@ -1,4 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="container">
     <app-header></app-header>
+    <app-add-employee (addEmployee)="newEmployeeAdded($event)"></app-add-employee>
+    <app-employee-table [employees]="employees"></app-employee-table>
 </div>
