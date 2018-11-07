@@ -12,7 +12,7 @@ import { EmployeeTableComponent } from './modules/employee-table/employee-table.
         AppComponent,
         HeaderComponent,
         AddEmployeeComponent,
-        EmployeeTableComponent
+        EmployeeTableComponent,
     ],
     imports: [
         BrowserModule,

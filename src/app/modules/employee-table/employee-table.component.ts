@@ -7,7 +7,9 @@ import { Employee } from '../../models/employee';
     styleUrls: ['./employee-table.component.scss']
 })
 export class EmployeeTableComponent {
-
     @Input()
     employees: Employee[] = [];
+
+    @Input()
+    totalCost: number = 0;
 }

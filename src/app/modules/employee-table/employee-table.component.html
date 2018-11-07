@@ -12,7 +12,15 @@
             <th scope="row">{{i + 1}}</th>
             <td>{{employee.name}}</td>
             <td>{{employee.numDependents}}</td>
-            <td>$0</td>
+            <td>{{employee.cost}}</td>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr>
+            <th scope="row">Total</th>
+            <td></td>
+            <td></td>
+            <td>{{totalCost}}</td>
         </tr>
     </tbody>
 </table>

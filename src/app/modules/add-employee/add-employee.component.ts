@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Employee } from '../../models/employee';
+import * as customValidators from '../../services/helpers/validators';
 
 @Component({
     selector: 'app-add-employee',
@@ -19,7 +20,7 @@ export class AddEmployeeComponent implements OnInit {
         // Build the new employee form
         this.form = this._formBuilder.group({
             'employeeName': ['', Validators.required],
-            'numDependents': [0]
+            'numDependents': ['', customValidators.dependentsValidator]
         })
     }
 
@@ -31,5 +32,13 @@ export class AddEmployeeComponent implements OnInit {
         });
 
         this.form.reset();
+    }
+
+    get employeeName() {
+        return this.form.get('employeeName');
+    }
+
+    get numDependents() {
+        return this.form.get('numDependents');
     }
 }

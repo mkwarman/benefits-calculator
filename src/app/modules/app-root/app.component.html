@@ -2,5 +2,8 @@
 <div class="container">
     <app-header></app-header>
     <app-add-employee (addEmployee)="newEmployeeAdded($event)"></app-add-employee>
-    <app-employee-table [employees]="employees"></app-employee-table>
+    <app-employee-table
+        [employees]="employees"
+        [totalCost]="totalCost"
+        ></app-employee-table>
 </div>

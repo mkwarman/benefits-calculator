@@ -12,19 +12,34 @@
                 id="employeeName"
                 placeholder="John Smith"
                 formControlName="employeeName"
+                required
                 >
+            <div *ngIf="employeeName.invalid && (employeeName.dirty || employeeName.touched)"
+                class="alert alert-danger"
+                role="alert">
+                <div *ngIf="employeeName.errors.required">
+                    Employee Name is required.
+                </div>
+            </div>
         </div>
         <div class="form-group col-md-4">
-            <label for="numDependents">Num of Dependents: </label>
+            <label for="numDependents">Number of Dependents: </label>
             <input
-                type="number"
+                type="text"
                 class="form-control"
                 id="numDependents"
                 placeholder="0"
                 formControlName="numDependents"
                 >
+            <div *ngIf="numDependents.invalid && (numDependents.dirty || numDependents.touched)"
+                class="alert alert-danger"
+                role="alert">
+                <div *ngIf="numDependents.errors.notNullZeroOrPositive">
+                    Please enter a valid number.
+                </div>
+            </div>
         </div>
-        <div class="form-group col-md-2 align-self-end">
+        <div class="form-group col-md-2">
             <button
                 type="submit"
                 class="btn btn-primary btn-block"
