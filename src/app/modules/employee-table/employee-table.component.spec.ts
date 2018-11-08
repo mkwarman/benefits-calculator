@@ -56,30 +56,30 @@ describe('EmployeeTableComponent', () => {
         expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(1) :nth-child(1)').textContent).toContain('1');
         expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(1) :nth-child(2)').textContent).toContain('Employee One');
         expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(1) :nth-child(3)').textContent).toContain('1');
-        expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(1) :nth-child(4)').textContent).toContain('$2,000.00');
+        expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(1) :nth-child(4)').textContent).toContain('$52,000.00');
         expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(1) :nth-child(5)').textContent).toContain('$1,500.00');
-        expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(1) :nth-child(6)').textContent).toContain('$3,500.00');
+        expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(1) :nth-child(6)').textContent).toContain('$53,500.00');
 
         expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(2) :nth-child(1)').textContent).toContain('2');
         expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(2) :nth-child(2)').textContent).toContain('Employee Two');
         expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(2) :nth-child(3)').textContent).toContain('2');
-        expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(2) :nth-child(4)').textContent).toContain('$2,000.00');
+        expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(2) :nth-child(4)').textContent).toContain('$52,000.00');
         expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(2) :nth-child(5)').textContent).toContain('$2,000.00');
-        expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(2) :nth-child(6)').textContent).toContain('$4,000.00');
+        expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(2) :nth-child(6)').textContent).toContain('$54,000.00');
 
         expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(3) :nth-child(1)').textContent).toContain('3');
         expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(3) :nth-child(2)').textContent).toContain('Employee Three');
         expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(3) :nth-child(3)').textContent).toContain('3');
-        expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(3) :nth-child(4)').textContent).toContain('$2,000.00');
+        expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(3) :nth-child(4)').textContent).toContain('$52,000.00');
         expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(3) :nth-child(5)').textContent).toContain('$2,500.00');
-        expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(3) :nth-child(6)').textContent).toContain('$4,500.00');
+        expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(3) :nth-child(6)').textContent).toContain('$54,500.00');
 
         expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(4) :nth-child(1)').textContent).toContain('4');
         expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(4) :nth-child(2)').textContent).toContain('A Employee Four');
         expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(4) :nth-child(3)').textContent).toContain('4');
-        expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(4) :nth-child(4)').textContent).toContain('$2,000.00');
+        expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(4) :nth-child(4)').textContent).toContain('$52,000.00');
         expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(4) :nth-child(5)').textContent).toContain('$2,700.00');
-        expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(4) :nth-child(6)').textContent).toContain('$4,700.00');
+        expect(compiled.querySelector('tbody:nth-child(2) tr:nth-child(4) :nth-child(6)').textContent).toContain('$54,700.00');
 
         expect(compiled.querySelector('tbody:nth-child(3) tr:nth-child(1) :nth-child(1)').textContent).toContain('Total:');
         expect(compiled.querySelector('tbody:nth-child(3) tr:nth-child(1) :nth-child(4)').textContent).toContain('$208,000.00');
