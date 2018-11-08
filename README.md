@@ -6,11 +6,11 @@ This benefits calculator seeks to make running your business just a little bit e
 1. Make sure Node.js is installed, then clone this repository
 2. Navigate to the repository directory
 3. Execute `npm install`
-4. Execute `ng start`
+4. Execute `npm run start`
 5. Open localhost:4200 in your browser
 
 Or, go just here: https://benefits.mkwarman.com
 
 ## Running Unit Tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `npm run test` to execute the unit tests via [Karma](https://karma-runner.github.io).
