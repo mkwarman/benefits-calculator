@@ -1,27 +1,16 @@
-# Benefits
+# Benefits Calculator
+This benefits calculator seeks to make running your business just a little bit easier by taking some of the number crunching out of your hands. Simply [go here](https://benefits.mkwarman.com) or run the app locally, then input your employees' information where prompted. The app will calculate salary, benefits, and total costs as you add employees. Click the minus button to remove a previously added employee or the trash can icon to reset and start over.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.7.
+## Installation and Running
 
-## Development server
+1. Make sure Node.js is installed, then clone this repository
+2. Navigate to the repository directory
+3. Execute `npm install`
+4. Execute `ng start`
+5. Open localhost:4200 in your browser
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Or, go just here: https://benefits.mkwarman.com
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
+## Running Unit Tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
