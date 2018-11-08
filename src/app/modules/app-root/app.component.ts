@@ -9,7 +9,8 @@ import { CostCalculatorService } from '../../services/cost-calculator.service';
 })
 export class AppComponent {
     employees: Employee[] = [];
-    totalCost: number = 0;
+    benefitsCost: number = 0;
+    salaryCost: number = 0;
     costCalculator: CostCalculatorService
 
     constructor(private _costCalculatorService: CostCalculatorService) {
@@ -20,10 +21,25 @@ export class AppComponent {
         this.employees.push({
             name: newEmployee.name,
             numDependents: newEmployee.numDependents,
-            cost: this.costCalculator.calculateTotal(newEmployee)
+            cost: this.costCalculator.calculateBenefitsCost(newEmployee)
         });
 
-        this.totalCost = this.employees.reduce(this.getSum, 0);
+        this.calculateCosts();
+    }
+
+    employeeRemoved(index: number) {
+        this.employees.splice(index, 1);
+        this.calculateCosts();
+    }
+
+    resetEmployees() {
+        this.employees = [];
+        this.calculateCosts();
+    }
+
+    calculateCosts() {
+        this.benefitsCost = this.employees.reduce(this.getSum, 0);
+        this.salaryCost = this.costCalculator.calculateSalaryCost(this.employees.length);
     }
 
     getSum(num, employee) {

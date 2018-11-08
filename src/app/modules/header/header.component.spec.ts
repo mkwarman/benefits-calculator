@@ -30,7 +30,7 @@ describe('HeaderComponent', () => {
 
     it('should render subtitle in a h5 tag', () => {
         const compiled = fixture.debugElement.nativeElement;
-        expect(compiled.querySelector('h5').textContent).toContain('Let us do the hard part so you can get back to running your business.');
+        expect(compiled.querySelector('h5').textContent).toContain('Let us do the number crunching so you can get back to running your business.');
         expect(compiled.querySelector('h5').textContent).toContain('Enter your employees\' information below to get started:');
     });
 });

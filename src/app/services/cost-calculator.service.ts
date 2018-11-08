@@ -17,7 +17,7 @@ export class CostCalculatorService {
         this.nameDiscountPrefix = 'a';
     }
 
-    calculateTotal(employee: Employee): number {
+    calculateBenefitsCost(employee: Employee): number {
         // Return null for bad data
         if (!employee || employee.name === null || employee.numDependents === null || !isFinite(employee.numDependents)) {
             return null;
@@ -29,6 +29,13 @@ export class CostCalculatorService {
         }
 
         return cost;
+    }
+
+    calculateSalaryCost(numEmployees) {
+        if (!isFinite(numEmployees)) {
+            return null;
+        }
+        return 26 * 2000 * numEmployees;
     }
 
     private eligibleForNameDiscount(name: string): boolean {

@@ -4,6 +4,10 @@
     <app-add-employee (addEmployee)="newEmployeeAdded($event)"></app-add-employee>
     <app-employee-table
         [employees]="employees"
-        [totalCost]="totalCost"
+        [benefitsCost]="benefitsCost"
+        [salaryCost]="salaryCost"
+        (removeEmployee)="employeeRemoved($event)"
+        (removeAll)="resetEmployees()"
+        *ngIf="employees.length > 0"
         ></app-employee-table>
 </div>

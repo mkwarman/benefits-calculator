@@ -1,0 +1,36 @@
+table {
+    border: 1px solid #dee2e6;
+
+    thead tr {
+        th.delete-all {
+            width: 32px;
+            background-image: url('/assets/trash_light.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        th.delete-all:hover {
+            background-image: url('/assets/trash_dark.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+
+    tbody tr {
+        td.delete {
+            width: 32px;
+            background-image: url('/assets/remove_light.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        td.delete:hover {
+            background-image: url('/assets/remove_dark.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+}
+
+th.number,
+td.number {
+    text-align: right;
+}

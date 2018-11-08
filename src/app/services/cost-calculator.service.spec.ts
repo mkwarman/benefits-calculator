@@ -11,7 +11,7 @@ describe('CostCalculatorService', () => {
         expect(service).toBeTruthy();
     });
 
-    it('should correctly calculate costs', () => {
+    it('should correctly calculate benefits costs', () => {
         const service: CostCalculatorService = TestBed.get(CostCalculatorService); 
 
         // Some of these are impossible, but we don't want to blow up in the event of bad data
@@ -83,7 +83,42 @@ describe('CostCalculatorService', () => {
                 name: testEmployee.name,
                 numDependents: testEmployee.dependents
             };
-            expect(service.calculateTotal(<Employee>employee)).toBe(testEmployee.expectedCost);
+            expect(service.calculateBenefitsCost(<Employee>employee)).toBe(testEmployee.expectedCost);
+        });
+    });
+
+    it('should correcly calculate salary costs', () => {
+        const service: CostCalculatorService = TestBed.get(CostCalculatorService); 
+
+        const testData = [
+            {
+                numEmployees: 0,
+                expectedCost: 0
+            },
+            {
+                numEmployees: 1,
+                expectedCost: 52000
+            },
+            {
+                numEmployees: 50,
+                expectedCost: 2600000
+            },
+            {
+                numEmployees: 50000,
+                expectedCost: 2600000000
+            },
+            {
+                numEmployees: '2',
+                expectedCost: 104000
+            },
+            {
+                numEmployees: 'f',
+                expectedCost: null
+            }
+        ]
+
+        testData.map(data => {
+            expect(service.calculateSalaryCost(data.numEmployees)).toBe(data.expectedCost);
         });
     })
 });

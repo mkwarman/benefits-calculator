@@ -1,26 +1,35 @@
-<table class="table" *ngIf="employees.length > 0">
+<table class="table">
     <thead class="thead-light">
         <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
-            <th scope="col">Dependants</th>
-            <th scope="col">Cost</th>
+            <th scope="col" class="number">Dependants</th>
+            <th scope="col" class="number">Salary</th>
+            <th scope="col" class="number">Benefits Cost</th>
+            <th scope="col" class="number">Total Cost</th>
+            <th scope="col" class="delete-all" (click)="handleRemoveAll()"></th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let employee of employees; index as i">
             <th scope="row">{{i + 1}}</th>
             <td>{{employee.name}}</td>
-            <td>{{employee.numDependents}}</td>
-            <td>{{employee.cost}}</td>
+            <td class="number">{{employee.numDependents}}</td>
+            <td class="number">{{2000 | currency}}</td>
+            <td class="number">{{employee.cost | currency}}</td>
+            <td class="number">{{2000 + employee.cost | currency}}</td>
+            <td class="delete" (click)="handleRemoveEmployee(i)"></td>
         </tr>
     </tbody>
-    <tbody>
+    <tbody class="thead-light">
         <tr>
-            <th scope="row">Total</th>
-            <td></td>
-            <td></td>
-            <td>{{totalCost}}</td>
+            <th>Total:</th>
+            <th></th>
+            <th></th>
+            <th class="number">{{salaryCost | currency}}</th>
+            <th class="number">{{benefitsCost | currency}}</th>
+            <th class="number">{{benefitsCost + salaryCost | currency}}</th>
+            <th></th>
         </tr>
     </tbody>
 </table>
