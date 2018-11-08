@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Employee } from '../../models/employee';
 import { EmployeeTableComponent } from './employee-table.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('EmployeeTableComponent', () => {
     let component: EmployeeTableComponent;
@@ -8,7 +9,8 @@ describe('EmployeeTableComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [EmployeeTableComponent]
+            declarations: [EmployeeTableComponent],
+            imports: [BrowserAnimationsModule]
         })
             .compileComponents();
     }));
@@ -83,5 +85,77 @@ describe('EmployeeTableComponent', () => {
         expect(compiled.querySelector('tbody:nth-child(3) tr:nth-child(1) :nth-child(4)').textContent).toContain('$208,000.00');
         expect(compiled.querySelector('tbody:nth-child(3) tr:nth-child(1) :nth-child(5)').textContent).toContain('$8,700.00');
         expect(compiled.querySelector('tbody:nth-child(3) tr:nth-child(1) :nth-child(6)').textContent).toContain('$216,700.00');
+    })
+
+    it('should emit on removeEmployee', () => {
+        component.employees = [
+            <Employee>{
+                name: 'Employee One',
+                numDependents: 1,
+                cost: 1500
+            },
+            <Employee>{
+                name: 'Employee Two',
+                numDependents: 2,
+                cost: 2000
+            },
+            <Employee>{
+                name: 'Employee Three',
+                numDependents: 3,
+                cost: 2500
+            },
+            <Employee>{
+                name: 'A Employee Four',
+                numDependents: 4,
+                cost: 2700
+            }
+        ];
+        component.benefitsCost = 8700;
+        component.salaryCost = 208000;
+        fixture.detectChanges();
+
+        var employeeIndex: number = null;
+        component.removeEmployee.subscribe((index) => {
+            employeeIndex = index;
+        })
+        component.handleRemoveEmployee(2);
+
+        expect(employeeIndex).toBe(2);
+    })
+
+    it('should emit on removeAll', () => {
+        component.employees = [
+            <Employee>{
+                name: 'Employee One',
+                numDependents: 1,
+                cost: 1500
+            },
+            <Employee>{
+                name: 'Employee Two',
+                numDependents: 2,
+                cost: 2000
+            },
+            <Employee>{
+                name: 'Employee Three',
+                numDependents: 3,
+                cost: 2500
+            },
+            <Employee>{
+                name: 'A Employee Four',
+                numDependents: 4,
+                cost: 2700
+            }
+        ];
+        component.benefitsCost = 8700;
+        component.salaryCost = 208000;
+        fixture.detectChanges();
+
+        var invocations = 0;
+        component.removeAll.subscribe(() => {
+            invocations++;
+        })
+        component.handleRemoveAll();
+
+        expect(invocations).toBe(1);
     })
 });

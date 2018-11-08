@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './modules/app-root/app.component';
 import { HeaderComponent } from './modules/header/header.component';
@@ -12,12 +13,13 @@ import { EmployeeTableComponent } from './modules/employee-table/employee-table.
         AppComponent,
         HeaderComponent,
         AddEmployeeComponent,
-        EmployeeTableComponent,
+        EmployeeTableComponent
     ],
     imports: [
         BrowserModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        BrowserAnimationsModule
     ],
     providers: [],
     bootstrap: [AppComponent]

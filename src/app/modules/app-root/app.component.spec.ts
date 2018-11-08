@@ -55,5 +55,77 @@ describe('AppComponent', () => {
         component.newEmployeeAdded(newEmployee);
 
         expect(component.employees).toEqual(expectedResult);
+        expect(component.salaryCost).toBe(52000);
+        expect(component.benefitsCost).toBe(2000);
+    })
+
+    it('#removeEmployee should remove employee', () => {
+        const fixture = TestBed.createComponent(AppComponent);
+        const component = fixture.componentInstance;
+        component.employees = [
+            <Employee>{
+                name: 'test',
+                numDependents: 1,
+                cost: 1000
+            },
+            <Employee>{
+                name: 'test2',
+                numDependents: 2,
+                cost: 2000
+            },
+            <Employee>{
+                name: 'test3',
+                numDependents: 3,
+                cost: 3000
+            },
+        ];
+        const expectedResult: Employee[] = [
+            <Employee>{
+                name: 'test',
+                numDependents: 1,
+                cost: 1000
+            },
+            <Employee>{
+                name: 'test3',
+                numDependents: 3,
+                cost: 3000
+            },
+        ];
+
+        component.employeeRemoved(1);
+
+        expect(component.employees).toEqual(expectedResult);
+        expect(component.salaryCost).toBe(104000);
+        expect(component.benefitsCost).toBe(4000);
+    })
+
+    it('#resetEmployees should remove all employees', () => {
+        const fixture = TestBed.createComponent(AppComponent);
+        const component = fixture.componentInstance;
+        component.employees = [
+            <Employee>{
+                name: 'test',
+                numDependents: 1,
+                cost: 1000
+            },
+            <Employee>{
+                name: 'test2',
+                numDependents: 2,
+                cost: 2000
+            },
+            <Employee>{
+                name: 'test3',
+                numDependents: 3,
+                cost: 3000
+            },
+        ];
+        const expectedResult: Employee[] = [
+        ];
+
+        component.resetEmployees();
+
+        expect(component.employees).toEqual(expectedResult);
+        expect(component.salaryCost).toBe(0);
+        expect(component.benefitsCost).toBe(0);
     })
 });
