@@ -85,7 +85,7 @@ describe('EmployeeTableComponent', () => {
         expect(compiled.querySelector('tbody:nth-child(3) tr:nth-child(1) :nth-child(4)').textContent).toContain('$208,000.00');
         expect(compiled.querySelector('tbody:nth-child(3) tr:nth-child(1) :nth-child(5)').textContent).toContain('$8,700.00');
         expect(compiled.querySelector('tbody:nth-child(3) tr:nth-child(1) :nth-child(6)').textContent).toContain('$216,700.00');
-    })
+    });
 
     it('should emit on removeEmployee', () => {
         component.employees = [
@@ -114,14 +114,14 @@ describe('EmployeeTableComponent', () => {
         component.salaryCost = 208000;
         fixture.detectChanges();
 
-        var employeeIndex: number = null;
+        let employeeIndex: number = null;
         component.removeEmployee.subscribe((index) => {
             employeeIndex = index;
-        })
+        });
         component.handleRemoveEmployee(2);
 
         expect(employeeIndex).toBe(2);
-    })
+    });
 
     it('should emit on removeAll', () => {
         component.employees = [
@@ -150,12 +150,12 @@ describe('EmployeeTableComponent', () => {
         component.salaryCost = 208000;
         fixture.detectChanges();
 
-        var invocations = 0;
+        let invocations = 0;
         component.removeAll.subscribe(() => {
             invocations++;
-        })
+        });
         component.handleRemoveAll();
 
         expect(invocations).toBe(1);
-    })
+    });
 });

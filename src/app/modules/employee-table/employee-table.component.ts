@@ -1,11 +1,5 @@
-import { Component, HostBinding, Input, Output, EventEmitter } from '@angular/core';
-import {
-    trigger,
-    state,
-    style,
-    animate,
-    transition,
-} from '@angular/animations';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 import { Employee } from '../../models/employee';
 
 @Component({
@@ -39,10 +33,10 @@ export class EmployeeTableComponent {
     employees: Employee[] = [];
 
     @Input()
-    benefitsCost: number = 0;
+    benefitsCost = 0;
 
     @Input()
-    salaryCost: number = 0;
+    salaryCost = 0;
 
     @Output()
     removeEmployee: EventEmitter<number> = new EventEmitter<number>();
@@ -50,10 +44,12 @@ export class EmployeeTableComponent {
     @Output()
     removeAll: EventEmitter<any> = new EventEmitter();
 
+    // Emit removeAll
     handleRemoveAll() {
         this.removeAll.emit(null);
     }
 
+    // Emit removeEmployee with employee index value
     handleRemoveEmployee(index) {
         this.removeEmployee.emit(index);
     }

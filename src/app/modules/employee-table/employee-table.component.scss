@@ -10,8 +10,6 @@ table {
         }
         th.delete-all:hover {
             background-image: url('/assets/trash_dark.svg');
-            background-repeat: no-repeat;
-            background-position: center;
         }
     }
 
@@ -24,8 +22,6 @@ table {
         }
         td.delete:hover {
             background-image: url('/assets/remove_dark.svg');
-            background-repeat: no-repeat;
-            background-position: center;
         }
     }
 }

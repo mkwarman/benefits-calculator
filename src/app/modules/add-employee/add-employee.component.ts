@@ -21,7 +21,7 @@ export class AddEmployeeComponent implements OnInit {
         this.form = this._formBuilder.group({
             'employeeName': ['', Validators.required],
             'numDependents': ['', customValidators.dependentsValidator]
-        })
+        });
     }
 
     // On add, emit new employee object and reset form

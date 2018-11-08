@@ -31,11 +31,11 @@ describe('AppComponent', () => {
         const employee = {
             cost: 10
         };
-        
+
         const result = component.getSum(15, employee);
 
         expect(result).toBe(25);
-    })
+    });
 
     it('#newEmployeeAdded should calculate cost and add new employee to employees list', () => {
         const fixture = TestBed.createComponent(AppComponent);
@@ -43,21 +43,21 @@ describe('AppComponent', () => {
         const newEmployee: Employee = {
             name: 'test',
             numDependents: 2,
-        }
+        };
         const expectedResult: Employee[] = [
             <Employee>{
                 name: 'test',
                 numDependents: 2,
                 cost: 2000
             }
-        ]
+        ];
 
         component.newEmployeeAdded(newEmployee);
 
         expect(component.employees).toEqual(expectedResult);
         expect(component.salaryCost).toBe(52000);
         expect(component.benefitsCost).toBe(2000);
-    })
+    });
 
     it('#removeEmployee should remove employee', () => {
         const fixture = TestBed.createComponent(AppComponent);
@@ -97,7 +97,7 @@ describe('AppComponent', () => {
         expect(component.employees).toEqual(expectedResult);
         expect(component.salaryCost).toBe(104000);
         expect(component.benefitsCost).toBe(4000);
-    })
+    });
 
     it('#resetEmployees should remove all employees', () => {
         const fixture = TestBed.createComponent(AppComponent);
@@ -127,5 +127,5 @@ describe('AppComponent', () => {
         expect(component.employees).toEqual(expectedResult);
         expect(component.salaryCost).toBe(0);
         expect(component.benefitsCost).toBe(0);
-    })
+    });
 });

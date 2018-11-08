@@ -12,7 +12,7 @@ describe('CostCalculatorService', () => {
     });
 
     it('should correctly calculate benefits costs', () => {
-        const service: CostCalculatorService = TestBed.get(CostCalculatorService); 
+        const service: CostCalculatorService = TestBed.get(CostCalculatorService);
 
         // Some of these are impossible, but we don't want to blow up in the event of bad data
         const testEmployees = [
@@ -63,7 +63,7 @@ describe('CostCalculatorService', () => {
             },
             {
                 name: 'doesnt start with a',
-                dependents: "2",
+                dependents: '2',
                 expectedCost: 2000
             },
             {
@@ -88,7 +88,7 @@ describe('CostCalculatorService', () => {
     });
 
     it('should correcly calculate salary costs', () => {
-        const service: CostCalculatorService = TestBed.get(CostCalculatorService); 
+        const service: CostCalculatorService = TestBed.get(CostCalculatorService);
 
         const testData = [
             {
@@ -115,10 +115,10 @@ describe('CostCalculatorService', () => {
                 numEmployees: 'f',
                 expectedCost: null
             }
-        ]
+        ];
 
         testData.map(data => {
             expect(service.calculateSalaryCost(data.numEmployees)).toBe(data.expectedCost);
         });
-    })
+    });
 });

@@ -17,13 +17,18 @@ export class CostCalculatorService {
         this.nameDiscountPrefix = 'a';
     }
 
+    // Given an employee object, calculate the employee's benefits costs based on their
+    //   number of dependents and their name.
     calculateBenefitsCost(employee: Employee): number {
         // Return null for bad data
         if (!employee || employee.name === null || employee.numDependents === null || !isFinite(employee.numDependents)) {
             return null;
         }
 
-        var cost = this.baseYearlyCost + (this.dependentCost * employee.numDependents);
+        // Factor in dependent costs
+        let cost = this.baseYearlyCost + (this.dependentCost * employee.numDependents);
+
+        // If eligible for name discount, apply discount
         if (this.eligibleForNameDiscount(employee.name)) {
             cost = cost * (1 - this.nameDiscountPercent);
         }
@@ -31,13 +36,18 @@ export class CostCalculatorService {
         return cost;
     }
 
+    // Given the number of employees, return the total salary cost
     calculateSalaryCost(numEmployees) {
+        // Return null for bad data
         if (!isFinite(numEmployees)) {
             return null;
         }
-        return 26 * 2000 * numEmployees;
+
+        // Assume employees are paid $2000 per paycheck and there are 26 paychecks in a year
+        return 2000 * 26 * numEmployees;
     }
 
+    // If name starts with configured nameDiscountPrefix, return true
     private eligibleForNameDiscount(name: string): boolean {
         // Normalize name to uppercase to match uppercase discount prefix value
         return (name.toLowerCase().startsWith(this.nameDiscountPrefix));

@@ -1,4 +1,4 @@
-import { AbstractControl } from  '@angular/forms'
+import { AbstractControl } from '@angular/forms';
 
 // Value must be positive, zero, or null
 export function dependentsValidator(control: AbstractControl) {

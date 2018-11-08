@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Employee } from '../../models/employee';
-import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddEmployeeComponent } from './add-employee.component';
 
 describe('AddEmployeeComponent', () => {
@@ -33,7 +33,7 @@ describe('AddEmployeeComponent', () => {
         component.form.controls['employeeName'].setValue('Employee Name');
         expect(component.form.valid).toBeTruthy();
     });
-    
+
     it('should emit employee object when form valid', () => {
         component.form.value.employeeName = 'Employee Name';
         component.form.value.numDependents = 2;
@@ -42,8 +42,8 @@ describe('AddEmployeeComponent', () => {
             expect(e).toEqual(<Employee>{
                 name: 'Employee Name',
                 numDependents: 2
-            })
-        })
+            });
+        });
         component.onAdd();
-    })
+    });
 });
