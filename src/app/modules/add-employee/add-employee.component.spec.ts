@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Employee } from '../../models/employee';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { AddEmployeeComponent } from './add-employee.component';
 
 describe('AddEmployeeComponent', () => {
@@ -45,5 +45,18 @@ describe('AddEmployeeComponent', () => {
             });
         });
         component.onAdd();
+    });
+
+    it('#dismissAlert should fix formcontrol', () => {
+        const formControl = new FormControl();
+        formControl.markAsTouched();
+        formControl.markAsDirty();
+        formControl.setValue('junk');
+
+        const result = component.dismissAlert(formControl);
+
+        expect(formControl.pristine).toBe(true);
+        expect(formControl.touched).toBe(false);
+        expect(formControl.value).toBe(null);
     });
 });

@@ -3,4 +3,5 @@ export interface Employee {
     name: string;
     numDependents: number;
     cost?: number;
+    discountEligible?: boolean;
 }

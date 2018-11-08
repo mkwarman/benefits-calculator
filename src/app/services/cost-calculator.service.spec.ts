@@ -121,4 +121,39 @@ describe('CostCalculatorService', () => {
             expect(service.calculateSalaryCost(data.numEmployees)).toBe(data.expectedCost);
         });
     });
+
+    it('should correcly determine name discount eligibility', () => {
+        const service: CostCalculatorService = TestBed.get(CostCalculatorService);
+
+        const testData = [
+            {
+                name: null,
+                expectedEligible: null
+            },
+            {
+                name: '',
+                expectedEligible: false
+            },
+            {
+                name: 'taest',
+                expectedEligible: false
+            },
+            {
+                name: 't aaaaa est',
+                expectedEligible: false
+            },
+            {
+                name: 'a test',
+                expectedEligible: true
+            },
+            {
+                name: 'A test',
+                expectedEligible: true
+            },
+        ];
+
+        testData.map(data => {
+            expect(service.eligibleForNameDiscount(data.name)).toBe(data.expectedEligible);
+        });
+    });
 });

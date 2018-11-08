@@ -14,7 +14,9 @@
         <tbody>
             <tr [@employeesTrigger] *ngFor="let employee of employees; index as i">
                 <th scope="row">{{i + 1}}</th>
-                <td>{{employee.name}}</td>
+                <td [class.discountEligible]="employee.discountEligible">
+                    {{employee.name}}
+                </td>
                 <td class="number">{{employee.numDependents}}</td>
                 <td class="number">{{2000 | currency}}</td>
                 <td class="number">{{employee.cost | currency}}</td>

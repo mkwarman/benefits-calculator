@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Employee } from '../../models/employee';
 import * as customValidators from '../../services/helpers/validators';
 
@@ -32,6 +32,14 @@ export class AddEmployeeComponent implements OnInit {
         });
 
         this.form.reset();
+    }
+
+    // Reset the field to be pristine and untouched on alert dismissal.
+    //   Set the value to null in case there was bad data in the field.
+    dismissAlert(control: FormControl) {
+        control.markAsPristine();
+        control.markAsUntouched();
+        control.setValue(null);
     }
 
     get employeeName() {

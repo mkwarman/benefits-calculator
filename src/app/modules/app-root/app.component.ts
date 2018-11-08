@@ -22,7 +22,8 @@ export class AppComponent {
         this.employees.push({
             name: newEmployee.name,
             numDependents: newEmployee.numDependents,
-            cost: this.costCalculator.calculateBenefitsCost(newEmployee)
+            cost: this.costCalculator.calculateBenefitsCost(newEmployee),
+            discountEligible: this.costCalculator.eligibleForNameDiscount(newEmployee.name)
         });
 
         this.calculateCosts();

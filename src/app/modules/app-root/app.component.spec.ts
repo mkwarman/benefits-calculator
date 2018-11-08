@@ -37,26 +37,38 @@ describe('AppComponent', () => {
         expect(result).toBe(25);
     });
 
-    it('#newEmployeeAdded should calculate cost and add new employee to employees list', () => {
+    it('#newEmployeeAdded should calculate cost and discount eligbility and then add new employee to employees list', () => {
         const fixture = TestBed.createComponent(AppComponent);
         const component = fixture.componentInstance;
         const newEmployee: Employee = {
             name: 'test',
             numDependents: 2,
         };
+        const newEmployee2: Employee = {
+            name: 'atest',
+            numDependents: 0,
+        };
         const expectedResult: Employee[] = [
             <Employee>{
                 name: 'test',
                 numDependents: 2,
-                cost: 2000
+                cost: 2000,
+                discountEligible: false
+            },
+            <Employee>{
+                name: 'atest',
+                numDependents: 0,
+                cost: 900,
+                discountEligible: true
             }
         ];
 
         component.newEmployeeAdded(newEmployee);
+        component.newEmployeeAdded(newEmployee2);
 
         expect(component.employees).toEqual(expectedResult);
-        expect(component.salaryCost).toBe(52000);
-        expect(component.benefitsCost).toBe(2000);
+        expect(component.salaryCost).toBe(104000);
+        expect(component.benefitsCost).toBe(2900);
     });
 
     it('#removeEmployee should remove employee', () => {

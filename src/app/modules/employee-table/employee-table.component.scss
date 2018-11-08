@@ -30,3 +30,11 @@ th.number,
 td.number {
     text-align: right;
 }
+
+.discountEligible {
+    font-style: italic;
+}
+
+.discountEligible:hover:after {
+    content: "(Discount eligible!)";
+}

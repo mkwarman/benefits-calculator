@@ -48,7 +48,12 @@ export class CostCalculatorService {
     }
 
     // If name starts with configured nameDiscountPrefix, return true
-    private eligibleForNameDiscount(name: string): boolean {
+    eligibleForNameDiscount(name: string): boolean {
+        // Return null for bad data
+        if (name === null) {
+            return null;
+        }
+
         // Normalize name to uppercase to match uppercase discount prefix value
         return (name.toLowerCase().startsWith(this.nameDiscountPrefix));
     }
