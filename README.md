@@ -1,5 +1,5 @@
 # Benefits Calculator
-This benefits calculator seeks to make running your business just a little bit easier by taking some of the number crunching out of your hands. Simply [go here](https://benefits.mkwarman.com) or run the app locally, then input your employees' information where prompted. The app will calculate salary, benefits, and total costs as you add employees. Click the minus button to remove a previously added employee or the trash can icon to reset and start over.
+This benefits calculator seeks to make running your business just a little bit easier by taking some of the number crunching out of your hands. Simply [go here](https://benefits.mkwarman.com) or run the app locally, then input your employees' information where prompted. The app will calculate salary, benefits, and total costs as you add employees. Click the minus icon to remove a previously added employee or the trash can icon to reset and start over.
 
 ## Installation and Running
 
